@@ -1,7 +1,7 @@
 "use client";
 
-import { environment } from "@kp/data";
-import { getImageSrc } from "@kp/shared";
+import { environment } from "@sp/data";
+import { getImageSrc } from "@sp/shared";
 
 import { Flex } from "antd";
 import "./styles.css";
@@ -73,7 +73,7 @@ export function RowAudio({
             <Text className="title size-lg">{elem.title}</Text>
           </Flex>
           <Flex className="block-time">
-            <Text disabled type="kpTertiary" className="size-lg">
+            <Text disabled type="spTertiary" className="size-lg">
               {elem.duration}
             </Text>
           </Flex>
