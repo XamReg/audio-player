@@ -1,0 +1,112 @@
+@layer components {
+  .audio-player {
+    position: relative;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    .block-hidden {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: var(--ant-border-radius-xxl);
+      .image-audio {
+        aspect-ratio: 1/1;
+        width: 100%;
+        object-fit: cover;
+        margin: 0 auto;
+      }
+      .control-unit {
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.4) 100%
+        );
+        height: 100%;
+        width: 100%;
+        justify-content: end;
+        bottom: 0;
+        display: flex;
+        position: absolute;
+        border-radius: var(--ant-border-radius-xxl);
+        .block-title {
+          opacity: 1;
+          visibility: visible;
+          text-align: center;
+          padding: 0 12px;
+        }
+        .block-title.hidden-block-title {
+          display: none;
+        }
+        .block-button-step {
+          margin-top: 31px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: var(--Space-Margin-marginLG, 24px);
+          .button-next {
+            opacity: 0;
+            color: var(--ant-color-bg-container-solid-light);
+            transition: opacity 0.5s ease;
+          }
+          .show-button {
+            opacity: 1;
+          }
+          .button-pause {
+            border: var(--ant-line-width) solid
+              var(--ant-button-default-border-color);
+            box-shadow: 0 var(--ant-control-outline-width) 0 0
+              var(--ant-control-tmp-outline);
+          }
+        }
+        .block-slider {
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          gap: var(--ant-margin);
+          margin: 24px var(--ant-margin-xl) 16.28px var(--ant-margin-xl);
+          align-items: center;
+          .slider-audio {
+            display: flex;
+            flex: 1 0 0;
+            .ant-slider-handle::after {
+              box-shadow: 0 0 0 var(--ant-slider-handle-line-width)
+                var(--ant-color-primary);
+            }
+          }
+          .button-sound {
+            background-color: transparent;
+            border: none;
+          }
+        }
+        .show-slider {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 678px) {
+    .audio-player {
+      .block-hidden {
+        aspect-ratio: 4/3;
+        .image-audio {
+          aspect-ratio: 4/3;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 960px) {
+    .audio-player {
+      height: 100%;
+      width: 50%;
+      aspect-ratio: 4/3;
+      .block-hidden {
+        .image-audio {
+          border-radius: var(--ant-border-radius-xxl);
+          display: flex;
+          align-self: stretch;
+          background-position: center;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

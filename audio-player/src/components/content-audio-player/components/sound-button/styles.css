@@ -1,0 +1,25 @@
+@layer components {
+  .sound-button {
+    background-color: transparent;
+    border: none;
+  }
+  .slider-sound {
+    height: 206px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    .ant-slider-handle::after {
+      box-shadow: 0 0 0 var(--ant-slider-handle-line-width)
+        var(--ant-color-primary);
+    }
+  }
+  .button-sound {
+    color: var(--ant-kp-color-bg-container-solid-light);
+  }
+
+  @media (max-width: 960px) {
+    .tooltip-hide-mobile {
+      display: none !important;
+    }
+  }
+}

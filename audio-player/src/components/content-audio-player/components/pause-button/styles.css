@@ -1,0 +1,5 @@
+@layer components {
+  .pause-button {
+    fill: var(--ant-button-default-color);
+  }
+}
